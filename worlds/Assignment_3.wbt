@@ -28,7 +28,7 @@ RectangleArena {
 }
 E-puck {
   translation 0 0 0
-  controller "cnn_camera_classifier"
+  controller "Assignment_3"
 }
 Dog {
   translation 0.5 0 0

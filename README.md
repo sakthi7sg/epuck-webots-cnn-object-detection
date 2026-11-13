@@ -37,7 +37,7 @@ A convolutional neural network (CNN) is trained on CIFAR-10 **off the robot**, t
 | 1 | Build a CNN for CIFAR-10 and show all its layers | Notebook, section 3 |
 | 2 | Report the test accuracy and compare it with published models | Notebook, section 5 |
 | 3 | Predict three images: a cat photo, a car photo and an e-puck camera image from Webots | Notebook, section 6, images in `cnn/test_images/` |
-| 4 | Place objects in Webots and classify an image from the e-puck camera | `cnn_camera_classifier` controller, notebook section 6 |
+| 4 | Place objects in Webots and classify an image from the e-puck camera | `Assignment_3` controller, notebook section 6 |
 | 5 | Optimise the model so the robot's operation is not affected | Notebook, section 7, and the controller |
 | 6 | Demonstrate Webots detecting coloured objects | `Assignment_2` controller |
 
@@ -52,14 +52,14 @@ epuck-webots-cnn-object-detection/
 │   ├── test_images/                 # cat.jpg, car.jpg and the Webots camera frame (sources in SOURCES.md)
 │   └── requirements.txt
 ├── controllers/
-│   ├── cnn_camera_classifier/
-│   │   ├── cnn_camera_classifier.py # e-puck turns on the spot and classifies camera frames
+│   ├── Assignment_3/
+│   │   ├── Assignment_3.py          # e-puck turns on the spot and classifies camera frames with the CNN
 │   │   ├── cnn_model.py             # CNN definition shared with the notebook
 │   │   └── requirements.txt
 │   └── Assignment_2/
 │       └── Assignment_2.py          # coloured-block search used for the colour detection demo
 ├── worlds/
-│   ├── cnn_camera_test.wbt          # e-puck surrounded by a dog, a cat, a horse and a deer
+│   ├── Assignment_3.wbt             # e-puck surrounded by a dog, a cat, a horse and a deer
 │   └── Assignment_2.wbt             # arena with red, blue and green blocks
 └── README.md
 ```
@@ -86,7 +86,7 @@ Training needs far more computation than a small robot has, so it runs on a GPU 
 
 ## CNN architecture
 
-A VGG-style network with three convolution blocks (about 0.81 M parameters). The definition is in [`cnn_model.py`](controllers/cnn_camera_classifier/cnn_model.py) and is shared by the notebook and the controller.
+A VGG-style network with three convolution blocks (about 0.81 M parameters). The definition is in [`cnn_model.py`](controllers/Assignment_3/cnn_model.py) and is shared by the notebook and the controller.
 
 | Stage | Layers | Output |
 |---|---|---|
@@ -116,14 +116,14 @@ A VGG-style network with three convolution blocks (about 0.81 M parameters). The
    ```bash
    pip install torch
    ```
-2. Copy `cifar10_cnn.pth` into `controllers/cnn_camera_classifier/`.
-3. Open `worlds/cnn_camera_test.wbt` in Webots and press **Run**.
+2. Copy `cifar10_cnn.pth` into `controllers/Assignment_3/`.
+3. Open `worlds/Assignment_3.wbt` in Webots and press **Run**.
 4. The e-puck turns on the spot. The console shows lines such as:
    ```text
    [  12.3 s] I think this is a dog (78%) | 2.4 ms | frame camera_frame_0006.png
    [CNN] 40 frames | mean 2.6 ms per frame | 0.5% of the time between frames
    ```
-5. The classified frames are saved in `controllers/cnn_camera_classifier/frames/`. Copy the clearest one to `cnn/test_images/webots_camera.png` and run notebook section 6 again.
+5. The classified frames are saved in `controllers/Assignment_3/frames/`. Copy the clearest one to `cnn/test_images/webots_camera.png` and run notebook section 6 again.
 
 If the model file or PyTorch is missing, the controller prints what to do and keeps the robot running.
 
