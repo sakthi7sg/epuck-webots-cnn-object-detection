@@ -1,0 +1,48 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/animals/protos/Dog.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/animals/protos/Cat.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/animals/protos/Horse.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/animals/protos/Deer.proto"
+
+WorldInfo {
+  info [
+    "CNN camera test: the e-puck turns on the spot and classifies"
+    "a dog, a cat, a horse and a deer with the CIFAR-10 CNN."
+  ]
+}
+Viewpoint {
+  orientation -0.5774 0.5774 0.5774 2.0944
+  position 0 0 4.2
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 3 3
+}
+E-puck {
+  translation 0 0 0
+  controller "cnn_camera_classifier"
+}
+Dog {
+  translation 0.6 0 0
+  rotation 0 0 1 1.5708
+}
+Cat {
+  translation 0 0.45 0
+}
+Horse {
+  translation -0.9 0 0
+  rotation 0 0 1 1.5708
+  scale 0.35
+}
+Deer {
+  translation 0 -0.9 0
+  scale 0.45
+}
