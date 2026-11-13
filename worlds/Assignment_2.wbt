@@ -1,0 +1,94 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5666672446556145 0.572340904022171 0.59271757474998 2.062680031059214
+  position 0.11973846645254393 0.03010720044594395 4.237490850719649
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0.37 0.19 0
+  floorSize 2 2
+}
+E-puck {
+  hidden position_0_0 32427.178415541126
+  hidden position_0_1 31849.863184976144
+  hidden linearVelocity_0 -4.165961795160023e-05 -0.00014704624327464654 -2.6253175869716003e-08
+  hidden angularVelocity_0 0.009803081962525955 -0.00277730760185764 -4.9433586376903586e-11
+  hidden rotation_1 0 0.9999999999999999 0 5.9422304944597935
+  hidden linearVelocity_1 -5.5546094897451544e-05 -0.00019606143754812548 -1.9288082293009377e-11
+  hidden angularVelocity_1 0.009803081954039365 -0.0027773075998018316 2.1948823025632296e-11
+  hidden rotation_2 0 -1 0 5.886322424359326
+  hidden linearVelocity_2 -5.554609449878091e-05 -0.00019606143614623553 -1.9247626068259362e-11
+  hidden angularVelocity_2 0.009803081954049546 -0.0027773075996752345 -1.208163187798127e-10
+  translation 0.9972378635566278 0.12120512353760797 -6.396205197196046e-05
+  rotation 0.00013124892848832923 9.923228310120265e-05 0.9999999864633364 -1.8468714246787945
+  controller "Assignment_2"
+  supervisor TRUE
+}
+DEF RED_BLOCK Solid {
+  translation 0.9028173684860186 -0.0957575489702614 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.3 0.3 0.1
+      }
+    }
+  ]
+  name "RED_BLOCK"
+  boundingObject Box {
+    size 0.3 0.3 0.1
+  }
+}
+DEF BLUE_BLOCK Solid {
+  translation 0.19580724036777186 0.5604927987557895 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.3 0.3 0.1
+      }
+    }
+  ]
+  name "BLUE_BLOCK"
+  boundingObject Box {
+    size 0.3 0.3 0.1
+  }
+}
+DEF GREEN_BLOCK Solid {
+  translation -0.22676577636729456 0.043375619386417597 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.3 0.3 0.1
+      }
+    }
+  ]
+  name "GREEN_BLOCK"
+  boundingObject Box {
+    size 0.3 0.3 0.1
+  }
+}

@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model weights, datasets and saved camera frames
+data/
+*.pth
+*.pt
+*.onnx
+controllers/**/frames/
+
+# Webots
+.*.wbproj
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
