@@ -10,6 +10,12 @@ A convolutional neural network (CNN) is trained on CIFAR-10 **off the robot**, t
 
 > Applied Robotics and AI Project, Part 2, BEng (Hons) Robotics and Artificial Intelligence, University of Hertfordshire.
 
+### ▶ Run the notebook in Google Colab
+
+<a href="https://colab.research.google.com/github/sakthi7sg/epuck-webots-cnn-object-detection/blob/main/cnn/cifar10_cnn.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="28"></a>
+
+**Link:** [https://colab.research.google.com/github/sakthi7sg/epuck-webots-cnn-object-detection/blob/main/cnn/cifar10_cnn.ipynb](https://colab.research.google.com/github/sakthi7sg/epuck-webots-cnn-object-detection/blob/main/cnn/cifar10_cnn.ipynb)
+
 ---
 
 ## Contents
@@ -97,7 +103,7 @@ A VGG-style network with three convolution blocks (about 0.81 M parameters). The
 
 ### 1. Train the CNN in Google Colab
 
-1. Click **Open in Colab** at the top of this page.
+1. Open the notebook in Colab: [cnn/cifar10_cnn.ipynb](https://colab.research.google.com/github/sakthi7sg/epuck-webots-cnn-object-detection/blob/main/cnn/cifar10_cnn.ipynb).
 2. Choose **Runtime → Change runtime type → T4 GPU**.
 3. Choose **Runtime → Run all**. Training takes about 10 minutes.
 4. When asked, upload three of your own photos (section 6).
