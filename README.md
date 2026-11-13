@@ -36,9 +36,9 @@ A convolutional neural network (CNN) is trained on CIFAR-10 **off the robot**, t
 |---|---|---|
 | 1 | Build a CNN for CIFAR-10 and show all its layers | Notebook, section 3 |
 | 2 | Report the test accuracy and compare it with published models | Notebook, section 5 |
-| 3 | Predict the class of three of my own photos | Notebook, section 6 |
-| 4 | Place objects in Webots and classify an image from the e-puck camera | `cnn_camera_classifier` controller, notebook section 7 |
-| 5 | Optimise the model so the robot's operation is not affected | Notebook, section 8, and the controller |
+| 3 | Predict three images: two of my own photos and one e-puck camera image from Webots | Notebook, section 6 |
+| 4 | Place objects in Webots and classify an image from the e-puck camera | `cnn_camera_classifier` controller, notebook section 6 |
+| 5 | Optimise the model so the robot's operation is not affected | Notebook, section 7, and the controller |
 | 6 | Demonstrate Webots detecting coloured objects | `Assignment_2` controller |
 
 ---
@@ -106,7 +106,7 @@ A VGG-style network with three convolution blocks (about 0.81 M parameters). The
 1. Open the notebook in Colab: [cnn/cifar10_cnn.ipynb](https://colab.research.google.com/github/sakthi7sg/epuck-webots-cnn-object-detection/blob/main/cnn/cifar10_cnn.ipynb).
 2. Choose **Runtime → Change runtime type → T4 GPU**.
 3. Choose **Runtime → Run all**. Training takes about 10 minutes.
-4. When asked, upload three of your own photos (section 6).
+4. In section 6, upload **two of your own photos** and then **one e-puck camera frame** from Webots (step 2 below). Run section 6 again after the Webots test if you train first.
 5. Download `cifar10_cnn.pth` and `cnn_outputs.zip` (figures and `results.json`) at the end.
 
 ### 2. Classify the e-puck camera image in Webots
@@ -122,7 +122,7 @@ A VGG-style network with three convolution blocks (about 0.81 M parameters). The
    [  12.3 s] I think this is a dog (78%) | 2.4 ms | frame camera_frame_0006.png
    [CNN] 40 frames | mean 2.6 ms per frame | 0.5% of the time between frames
    ```
-5. The classified frames are saved in `controllers/cnn_camera_classifier/frames/`. Upload one in notebook section 7 to show it with its probabilities.
+5. The classified frames are saved in `controllers/cnn_camera_classifier/frames/`. Upload the clearest one as the third image in notebook section 6.
 
 If the model file or PyTorch is missing, the controller prints what to do and keeps the robot running.
 

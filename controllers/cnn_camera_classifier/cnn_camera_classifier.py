@@ -2,7 +2,7 @@
 
 The e-puck turns slowly on the spot and classifies what its camera sees with the
 CIFAR-10 CNN trained in cnn/cifar10_cnn.ipynb. Each classified frame is saved as
-frames/camera_frame_XXXX.png so it can be uploaded to the notebook (section 7).
+frames/camera_frame_XXXX.png so one can be uploaded to the notebook (section 6).
 
 Optimisations so the CNN does not disturb the robot's movement:
   * the CNN runs in a background thread, so the 64 ms control loop never waits;
