@@ -43,6 +43,7 @@ def load_classifier():
     if not os.path.isfile(MODEL_PATH):
         print(f"[CNN] Model file not found: {MODEL_PATH}")
         print("[CNN] Download cifar10_cnn.pth from the notebook and copy it into this folder.")
+        print("[CNN] Camera frames are still saved in the frames folder.")
         return None, None
 
     torch.set_num_threads(1)
@@ -110,6 +111,13 @@ def main():
         left.setVelocity(-TURN_SPEED)
         right.setVelocity(TURN_SPEED)
         step += 1
+
+        # Save one camera frame every INFER_EVERY steps (also without a model, for the notebook).
+        frame_name = "-"
+        if step % INFER_EVERY == 0 and saved < MAX_SAVED_FRAMES:
+            saved += 1
+            frame_name = f"camera_frame_{saved:04d}.png"
+            camera.saveImage(os.path.join(FRAME_DIR, frame_name), 100)
         if model is None:
             continue
 
@@ -128,11 +136,7 @@ def main():
         # Start a new classification every INFER_EVERY steps, if the worker is free.
         if step % INFER_EVERY == 0 and pending is None:
             rgb = camera_to_rgb(camera, torch)
-            pending_frame = "-"
-            if saved < MAX_SAVED_FRAMES:
-                saved += 1
-                pending_frame = f"camera_frame_{saved:04d}.png"
-                camera.saveImage(os.path.join(FRAME_DIR, pending_frame), 100)
+            pending_frame = frame_name
             pending = worker.submit(classify, model, torch, rgb)
 
         if step % 300 == 0 and times_ms:
